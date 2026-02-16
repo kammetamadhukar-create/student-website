@@ -1,89 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Madhukar Speaks</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhukar Speaks</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* ===== GLOBAL ===== */
+/* ===== ROOT ===== */
+:root{
+    --bg:#0f2027;
+    --text:#ffffff;
+    --card:rgba(255,255,255,0.08);
+    --accent:#00c6ff;
+}
+
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    background:#0f2027;
-    color:white;
+    font-family:Segoe UI, sans-serif;
+    background:var(--bg);
+    color:var(--text);
     scroll-behavior:smooth;
+    transition:0.4s;
 }
 
-h1,h2,h3{
-    margin:10px 0;
-}
-
-section{
-    padding:80px 20px;
-    text-align:center;
+/* LIGHT MODE */
+.light{
+    --bg:#f4f4f4;
+    --text:#111;
+    --card:#ffffff;
 }
 
 /* ===== HEADER ===== */
 header{
     position:fixed;
-    top:0;
     width:100%;
-    background:#111;
-    padding:15px 0;
-    text-align:center;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(8px);
     z-index:1000;
 }
 
-.brand{
-    color:#FFD700;
+.logo{
     font-weight:bold;
+    font-size:18px;
+}
+
+.logo span{
+    color:#FFD700;
 }
 
 .nav{
-    margin-top:8px;
+    display:flex;
+    gap:20px;
 }
 
 .nav a{
-    margin:0 15px;
-    color:white;
     text-decoration:none;
+    color:var(--text);
     font-size:14px;
 }
 
-/* ===== HERO ===== */
+.menu-btn{
+    display:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ===== HERO ANIMATION ===== */
 .hero{
-    padding-top:140px;
-    padding-bottom:100px;
+    padding-top:160px;
+    padding-bottom:120px;
     text-align:center;
-    background: linear-gradient(to right,#141e30,#243b55);
+    background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#00c6ff);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 .hero h1{
-    font-size:40px;
+    font-size:42px;
+    animation:fadeUp 1.2s ease;
 }
 
 .hero p{
+    margin:20px 0;
     font-size:18px;
-    margin-bottom:20px;
+    animation:fadeUp 1.8s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 button{
-    padding:12px 28px;
+    padding:14px 30px;
     border:none;
-    background:#00c6ff;
+    background:var(--accent);
     color:black;
     font-weight:bold;
-    border-radius:6px;
+    border-radius:8px;
     cursor:pointer;
     transition:0.3s;
 }
 
 button:hover{
-    background:white;
+    transform:scale(1.05);
 }
 
-/* ===== COURSES ===== */
+/* ===== SECTIONS ===== */
+section{
+    padding:90px 20px;
+    text-align:center;
+}
+
 .course-container{
     display:flex;
     justify-content:center;
@@ -91,55 +133,93 @@ button:hover{
 }
 
 .card{
-    background:#1f2a38;
+    background:var(--card);
     padding:25px;
     margin:20px;
-    width:250px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
-    transition:0.3s;
+    width:260px;
+    border-radius:15px;
+    transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 }
 
-/* ===== ABOUT ===== */
-#about{
-    background:#16222a;
+/* ===== SCROLL REVEAL ===== */
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* ===== CONTACT ===== */
 input, textarea{
-    width:60%;
+    width:50%;
     padding:12px;
     margin:10px 0;
+    border-radius:8px;
     border:none;
-    border-radius:5px;
-}
-
-form button{
-    margin-top:10px;
 }
 
 /* ===== FOOTER ===== */
 footer{
-    background:#111;
     padding:20px;
+    background:rgba(0,0,0,0.7);
     text-align:center;
-    font-size:14px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width:768px){
+.social a{
+    margin:0 10px;
+    font-size:22px;
+    color:var(--text);
+}
 
-    .hero h1{
-        font-size:26px;
+/* ===== WHATSAPP ===== */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:14px;
+    border-radius:50%;
+    font-size:22px;
+    text-decoration:none;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+    .nav{
+        position:absolute;
+        top:60px;
+        right:0;
+        background:#111;
+        flex-direction:column;
+        width:200px;
+        padding:15px;
+        display:none;
     }
 
-    .course-container{
-        flex-direction:column;
-        align-items:center;
+    .nav.show{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
     }
 
     .card{
@@ -149,11 +229,6 @@ footer{
     input, textarea{
         width:90%;
     }
-
-    .nav a{
-        display:block;
-        margin:8px 0;
-    }
 }
 
 </style>
@@ -161,72 +236,99 @@ footer{
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
-    <span class="brand">Madhukar</span> Speaks
-    <div class="nav">
+    <div class="logo"><span>Madhukar</span> Speaks</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav" id="nav">
         <a href="#home">Home</a>
         <a href="#courses">Courses</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="#" onclick="toggleMode()">🌓</a>
     </div>
 </header>
 
-<!-- ===== HERO ===== -->
 <section class="hero" id="home">
-    <h1>Learn Coding in Simple Way</h1>
+    <h1>Learn Coding the Smart Way</h1>
     <p>Start your journey today with Madhukar Speaks Platform</p>
     <a href="#courses">
         <button>Start Learning</button>
     </a>
 </section>
 
-<!-- ===== COURSES ===== -->
-<section id="courses">
+<section id="courses" class="reveal">
     <h2>Our Courses</h2>
-
     <div class="course-container">
-
         <div class="card">
             <h3>C Programming</h3>
             <p>Master C from basics to advanced level.</p>
         </div>
-
         <div class="card">
             <h3>Python</h3>
             <p>Learn Python for real world applications.</p>
         </div>
-
         <div class="card">
             <h3>Web Development</h3>
             <p>Build websites using HTML, CSS and JavaScript.</p>
         </div>
-
     </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
-<section id="about">
+<section id="about" class="reveal">
     <h2>About Us</h2>
     <p>Madhukar Speaks helps students learn programming in a simple and practical way.</p>
 </section>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact">
+<section id="contact" class="reveal">
     <h2>Contact Us</h2>
-
-    <form>
-        <input type="text" placeholder="Your Name" required><br>
-        <input type="email" placeholder="Your Email" required><br>
-        <textarea rows="4" placeholder="Your Message" required></textarea><br>
-        <button type="submit">Send Message</button>
-    </form>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea rows="4" placeholder="Your Message"></textarea><br>
+    <button>Send Message</button>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
-    © 2026 Madhukar Speaks | All Rights Reserved
+    <div class="social">
+        <a href="https://www.youtube.com/@madhukarspeaks" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com/madhukarspeaks" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/madhukarspeaks" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>© 2026 Madhukar Speaks</p>
 </footer>
+
+<a href="https://wa.me/919876543210" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("show");
+}
+
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+
+function reveal(){
+    var reveals = document.querySelectorAll(".reveal");
+    for(var i=0; i<reveals.length; i++){
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        if(elementTop < windowHeight - 100){
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+
+</script>
 
 </body>
 </html>
