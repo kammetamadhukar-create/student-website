@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
+<title>Email Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
@@ -33,23 +33,41 @@ button{
 
 <h2>Login to Download</h2>
 
-<input type="text" id="username" placeholder="Username"><br>
-<input type="password" id="password" placeholder="Password"><br>
-
+<input type="email" id="email" placeholder="Enter Email"><br>
+<input type="password" id="password" placeholder="Enter Password"><br>
 <button onclick="login()">Login</button>
 
-<script>
-function login(){
-    const user=document.getElementById("username").value;
-    const pass=document.getElementById("password").value;
+<script type="module">
 
-    if(user==="madhukar" && pass==="1234"){
-        localStorage.setItem("loggedIn","true");
+// 🔥 Import Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+// 🔥 Replace with your config
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.login = function(){
+    const email=document.getElementById("email").value;
+    const password=document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then(()=>{
         window.location.href="maths2.html";
-    }else{
-        alert("Invalid Login");
-    }
+    })
+    .catch((error)=>{
+        alert(error.message);
+    });
 }
+
 </script>
 
 </body>
