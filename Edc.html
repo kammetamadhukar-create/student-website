@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Electronic Devices & Circuits</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+color:white;
+text-align:center;
+}
+
+header{
+padding:25px;
+font-size:24px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.paper-card{
+max-width:750px;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.paper-card h2{
+margin-bottom:10px;
+}
+
+iframe{
+width:95%;
+height:420px;
+border-radius:12px;
+margin-top:15px;
+border:none;
+}
+
+button{
+margin-top:18px;
+padding:12px 30px;
+border:none;
+border-radius:25px;
+background:#facc15;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#userEmail{
+margin-top:10px;
+font-size:14px;
+opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>Electronic Devices & Circuits – Mid Papers</header>
+
+<div id="userEmail"></div>
+
+<!-- MID 1 -->
+<div class="paper-card">
+<h2>Mid 1 Question Paper</h2>
+<iframe src="edc-mid1.pdf"></iframe>
+<br>
+<button onclick="handleDownload('edc-mid1.pdf')">
+Download Mid 1
+</button>
+</div>
+
+<!-- MID 2 -->
+<div class="paper-card">
+<h2>Mid 2 Question Paper</h2>
+<iframe src="edc-mid2.pdf"></iframe>
+<br>
+<button onclick="handleDownload('edc-mid2.pdf')">
+Download Mid 2
+</button>
+</div>
+
+<script type="module">
+
+import { initializeApp } from 
+"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import { 
+getAuth,
+onAuthStateChanged,
+setPersistence,
+browserLocalPersistence
+} from 
+"https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "YOUR_API_KEY",
+authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+projectId: "YOUR_PROJECT_ID",
+appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Permanent login on device
+setPersistence(auth, browserLocalPersistence);
+
+// Show logged-in email
+onAuthStateChanged(auth,(user)=>{
+if(user){
+document.getElementById("userEmail").innerText =
+"Logged in as: " + user.email;
+}
+});
+
+// Download protection
+window.handleDownload = function(file){
+if(auth.currentUser){
+window.open(file,"_blank");
+}else{
+window.location.href="login.html?redirect=edc.html";
+}
+}
+
+</script>
+
+</body>
+</html>
