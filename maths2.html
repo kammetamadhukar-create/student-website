@@ -1,75 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Maths 2 PDFs</title>
+<title>Maths 2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body{
     margin:0;
-    font-family:Segoe UI, sans-serif;
+    font-family:Segoe UI;
     background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
     color:white;
     text-align:center;
 }
-
-header{
-    padding:20px;
-    font-size:22px;
+iframe{
+    width:90%;
+    height:500px;
+    margin-top:20px;
+}
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:20px;
+    background:#facc15;
     font-weight:bold;
-}
-
-.pdf-wrapper{
-    max-width:800px;
-    margin:40px auto;
-    padding:20px;
-}
-
-.pdf-card{
-    padding:20px;
-    margin:15px 0;
-    border-radius:15px;
-    background:rgba(255,255,255,0.15);
-    text-decoration:none;
-    color:white;
-    display:block;
-    transition:0.3s;
-}
-
-.pdf-card:hover{
-    transform:scale(1.05);
-    background:rgba(255,255,255,0.25);
+    cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<header>Maths 2 – Study Materials</header>
+<h2>Maths 2 – Unit 1</h2>
 
-<div class="pdf-wrapper">
+<iframe src="bee.pdf"></iframe><br>
 
-<a href="Mid 1" target="_blank" class="pdf-card">
-Unit 1 – Matrices
-</a>
+<button onclick="handleDownload()">Download PDF</button>
 
-<a href="unit2.pdf" target="_blank" class="pdf-card">
-Unit 2 – Laplace Transforms
-</a>
+<script type="module">
 
-<a href="unit3.pdf" target="_blank" class="pdf-card">
-Unit 3 – Differential Equations
-</a>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-<a href="unit4.pdf" target="_blank" class="pdf-card">
-Unit 4 – Fourier Series
-</a>
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  appId: "YOUR_APP_ID"
+};
 
-<a href="unit5.pdf" target="_blank" class="pdf-card">
-Unit 5 – Probability
-</a>
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-</div>
+window.handleDownload = function(){
+    if(auth.currentUser){
+        window.open("bee.pdf","_blank");
+    }else{
+        window.location.href="login.html?redirect=maths2.html";
+    }
+}
+
+</script>
 
 </body>
 </html>
