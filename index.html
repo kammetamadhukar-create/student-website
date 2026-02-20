@@ -6,138 +6,202 @@
 
 <style>
 
-/* ===== BACKGROUND ===== */
+/* ===== GLOBAL ===== */
 body{
-    margin:0;
-    font-family:Segoe UI, sans-serif;
-    background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
-    background-attachment:fixed;
-    color:white;
-    text-align:center;
-    overflow-x:hidden;
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
+color:white;
+scroll-behavior:smooth;
 }
 
-/* ===== HEADER ===== */
-header{
-    padding:20px;
-    font-size:22px;
-    font-weight:bold;
+section{
+padding:120px 20px;
+text-align:center;
+}
+
+h1,h2{
+margin-bottom:20px;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+nav a:hover{
+color:#facc15;
 }
 
 /* ===== HERO ===== */
 .hero{
-    padding:120px 20px;
+padding-top:160px;
 }
 
 .hero h1{
-    font-size:42px;
+font-size:46px;
 }
 
-.start-btn{
-    padding:14px 30px;
-    border:none;
-    border-radius:30px;
-    background:#facc15;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:25px;
-    transition:0.3s;
+.hero p{
+font-size:18px;
+opacity:0.9;
 }
 
-.start-btn:hover{
-    transform:scale(1.1);
+.btn{
+margin-top:25px;
+padding:14px 32px;
+border:none;
+border-radius:30px;
+background:#facc15;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
-/* ===== SUBJECT SECTION ===== */
-.subject-wrapper{
-    max-width:1000px;
-    margin:80px auto;
-    padding:20px;
+.btn:hover{
+transform:scale(1.08);
 }
 
-/* FIRST ROW - 3 SMALL */
-.row-small{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+/* ===== VALUE SECTION ===== */
+.value-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:1000px;
+margin:auto;
 }
 
-/* SECOND ROW - 2 MEDIUM */
-.row-big{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-    margin-top:35px;
-    max-width:700px;
-    margin-left:auto;
-    margin-right:auto;
+.value-box{
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:20px;
 }
 
-/* GLASS CARD */
+/* ===== SUBJECTS ===== */
+.subject-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
 .subject{
-    padding:28px;
-    border-radius:22px;
-    backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.25);
-    cursor:pointer;
-    font-weight:600;
-    transition:0.4s;
-}
-
-/* Slightly bigger but not huge */
-.row-big .subject{
-    padding:35px;
-    font-size:17px;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+transition:0.3s;
+cursor:pointer;
 }
 
 .subject:hover{
-    transform:translateY(-10px) scale(1.04);
-    box-shadow:0 12px 30px rgba(0,0,0,0.4);
-    background:rgba(255,255,255,0.2);
+transform:translateY(-8px);
 }
 
-/* ===== SCROLL REVEAL ===== */
-.reveal{
-    opacity:0;
-    transform:translateY(60px);
-    transition:0.8s ease;
+/* ===== STATS ===== */
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+max-width:900px;
+margin:auto;
 }
 
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
+.stat-box{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:20px;
 }
 
-/* ===== SCROLL TOP BUTTON ===== */
-#topBtn{
-    position:fixed;
-    bottom:30px;
-    right:30px;
-    background:#facc15;
-    border:none;
-    padding:12px 16px;
-    border-radius:50%;
-    cursor:pointer;
-    display:none;
-    font-weight:bold;
+.stat-box h2{
+color:#facc15;
 }
 
-/* MOBILE */
+/* ===== MENTOR ===== */
+.mentor{
+max-width:800px;
+margin:auto;
+background:rgba(255,255,255,0.12);
+padding:40px;
+border-radius:25px;
+}
+
+.mentor img{
+width:120px;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+/* ===== FAQ ===== */
+.faq{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,0.12);
+padding:50px;
+border-radius:25px;
+text-align:left;
+}
+
+.faq-item{
+margin-top:20px;
+}
+
+/* ===== APP SECTION ===== */
+.app-section{
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+border-radius:30px;
+max-width:900px;
+margin:auto;
+padding:60px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+margin-top:100px;
+background:rgba(0,0,0,0.6);
+padding:40px;
+text-align:center;
+}
+
+footer a{
+color:#facc15;
+text-decoration:none;
+}
+
+/* ===== ANIMATION ===== */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ===== MOBILE ===== */
 @media(max-width:768px){
-
-    .row-small{
-        grid-template-columns:1fr;
-    }
-
-    .row-big{
-        grid-template-columns:1fr;
-        max-width:90%;
-    }
-
-    .hero h1{
-        font-size:28px;
-    }
+.value-grid,
+.subject-grid,
+.stats{
+grid-template-columns:1fr;
+}
 }
 
 </style>
@@ -145,61 +209,99 @@ header{
 
 <body>
 
-<header>
-Madhukar Speaks – Study Portal
-</header>
+<nav>
+<a href="#">Home</a>
+<a href="#subjects">Subjects</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<section class="hero">
-<h1>Meet Your Mentor</h1>
-<p>Access Study Materials Easily</p>
-<button class="start-btn" onclick="scrollSubjects()">Start Learning</button>
+<section class="hero fade">
+<h1>Master Engineering Subjects with Clarity</h1>
+<p>Structured study materials designed for real exam performance.</p>
+<button class="btn" onclick="document.getElementById('subjects').scrollIntoView()">Start Learning</button>
 </section>
 
-<div class="subject-wrapper reveal" id="subjects">
-
-<!-- 3 SMALL SUBJECTS -->
-<div class="row-small">
-    <div class="subject" onclick="location.href='maths2.html'">Maths 2</div>
-    <div class="subject" onclick="location.href='english.html'">English</div>
-    <div class="subject" onclick="location.href='chemistry.html'">Chemistry</div>
+<section class="fade">
+<h2>Why Choose This Platform?</h2>
+<div class="value-grid">
+<div class="value-box">✔ Exam-Oriented Notes</div>
+<div class="value-box">✔ Simple Explanations</div>
+<div class="value-box">✔ Quick Revision Materials</div>
 </div>
+</section>
 
-<!-- 2 MEDIUM SUBJECTS -->
-<div class="row-big">
-    <div class="subject" onclick="location.href='edc.html'">Electronic Devices</div>
-    <div class="subject" onclick="location.href='datastructures.html'">Data Structures</div>
+<section id="subjects" class="fade">
+<h2>Subjects</h2>
+<div class="subject-grid">
+<div class="subject">Maths 2</div>
+<div class="subject">English</div>
+<div class="subject">Chemistry</div>
+<div class="subject">Electronic Devices</div>
+<div class="subject">Data Structures</div>
+<div class="subject">More Coming Soon</div>
 </div>
+</section>
 
+<section class="fade">
+<h2>Platform Impact</h2>
+<div class="stats">
+<div class="stat-box"><h2>500+</h2>Students Helped</div>
+<div class="stat-box"><h2>20+</h2>Study Materials</div>
+<div class="stat-box"><h2>4.9★</h2>Average Rating</div>
+<div class="stat-box"><h2>100%</h2>Free Access</div>
 </div>
+</section>
 
-<button id="topBtn" onclick="scrollTop()">↑</button>
+<section class="fade">
+<div class="mentor">
+<img src="https://via.placeholder.com/120">
+<h2>Madhukar</h2>
+</div>
+</section>
+
+<section id="faq" class="fade">
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h4>Are materials free?</h4>
+<p>Yes, completely free for students.</p>
+</div>
+<div class="faq-item">
+<h4>How often is content updated?</h4>
+<p>Content is updated regularly based on student needs.</p>
+</div>
+<div class="faq-item">
+<h4>Is there an app coming?</h4>
+<p>Yes, a dedicated mobile app is under development.</p>
+</div>
+</div>
+</section>
+
+<section class="fade">
+<div class="app-section">
+<h2>📱 Mobile App Launching Soon</h2>
+<p>We are building a dedicated app for better access and smoother learning experience.</p>
+<button class="btn">Notify Me</button>
+</div>
+</section>
+
+<footer id="contact">
+<p>© 2025 Madhukar Speaks</p>
+<p>Email: <a href="mailto:yourmail@gmail.com">madhukarspeaks@gmail.com</a></p>
+<p>Privacy Policy | Terms | Disclaimer</p>
+</footer>
 
 <script>
 
-/* Scroll reveal animation */
-window.addEventListener("scroll", function(){
-    let reveal = document.querySelector(".reveal");
-    let windowHeight = window.innerHeight;
-    let elementTop = reveal.getBoundingClientRect().top;
-
-    if(elementTop < windowHeight - 100){
-        reveal.classList.add("active");
-    }
-
-    if(window.scrollY > 300){
-        document.getElementById("topBtn").style.display="block";
-    } else {
-        document.getElementById("topBtn").style.display="none";
-    }
+const faders=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+faders.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add("show");
+}
 });
-
-function scrollSubjects(){
-    document.getElementById("subjects").scrollIntoView({behavior:"smooth"});
-}
-
-function scrollTop(){
-    window.scrollTo({top:0,behavior:"smooth"});
-}
+});
 
 </script>
 
