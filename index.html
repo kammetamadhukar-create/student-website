@@ -113,25 +113,6 @@ cursor:pointer;
 transform:translateY(-8px);
 }
 
-/* ===== STATS ===== */
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-.stat-box{
-background:rgba(255,255,255,0.15);
-padding:25px;
-border-radius:20px;
-}
-
-.stat-box h2{
-color:#facc15;
-}
-
 /* ===== MENTOR ===== */
 .mentor{
 max-width:800px;
@@ -198,8 +179,7 @@ transform:translateY(0);
 /* ===== MOBILE ===== */
 @media(max-width:768px){
 .value-grid,
-.subject-grid,
-.stats{
+.subject-grid{
 grid-template-columns:1fr;
 }
 }
@@ -243,14 +223,11 @@ grid-template-columns:1fr;
 </div>
 </section>
 
+<!-- NEW CLEAN SECTION (NO FAKE STATS) -->
 <section class="fade">
-<h2>Platform Impact</h2>
-<div class="stats">
-<div class="stat-box"><h2>500+</h2>Students Helped</div>
-<div class="stat-box"><h2>20+</h2>Study Materials</div>
-<div class="stat-box"><h2>4.9★</h2>Average Rating</div>
-<div class="stat-box"><h2>100%</h2>Free Access</div>
-</div>
+<h2>Building Something Valuable</h2>
+<p>We are currently working on creating high-quality study materials 
+to help students learn better and score higher in exams.</p>
 </section>
 
 <section class="fade">
@@ -288,7 +265,7 @@ grid-template-columns:1fr;
 
 <footer id="contact">
 <p>© 2025 Madhukar Speaks</p>
-<p>Email: <a href="mailto:madhukarspeaks@gmail.com">yourmail@gmail.com</a></p>
+<p>Email: <a href="mailto:madhukarspeaks@gmail.com">madhukar.kammeta@gmail.com</a></p>
 <p>Privacy Policy | Terms | Disclaimer</p>
 </footer>
 
