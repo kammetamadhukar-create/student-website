@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
 <title>Madhukar Speaks</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* =====================
-   GLOBAL
-===================== */
+/* ===== GLOBAL ===== */
 
 *{
 margin:0;
@@ -28,20 +21,12 @@ scroll-behavior:smooth;
 
 body{
 font-family:Segoe UI,sans-serif;
-background:
-linear-gradient(
-135deg,
-#0f172a,
-#1e3a8a,
-#3b82f6
-);
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
 color:white;
 overflow-x:hidden;
 }
 
-/* =====================
-   NAVBAR
-===================== */
+/* ===== NAVBAR ===== */
 
 nav{
 position:fixed;
@@ -50,21 +35,16 @@ left:0;
 width:100%;
 display:flex;
 justify-content:center;
-align-items:center;
 gap:30px;
 padding:18px;
-
-background:
-rgba(0,0,0,0.35);
-
+background:rgba(0,0,0,0.4);
 backdrop-filter:blur(12px);
-
 z-index:1000;
 }
 
 nav a{
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-weight:600;
 transition:.3s;
 }
@@ -73,62 +53,48 @@ nav a:hover{
 color:#facc15;
 }
 
-/* =====================
-   HERO
-===================== */
+/* ===== SECTION ===== */
 
-.hero{
-min-height:100vh;
-
-display:flex;
-flex-direction:column;
-
-justify-content:center;
-align-items:center;
-
+section{
+padding:120px 20px;
 text-align:center;
-
-padding:20px;
 }
 
-.hero h1{
-
-font-size:52px;
-
-max-width:900px;
-
-line-height:1.2;
-
+h1,h2{
 margin-bottom:20px;
 }
 
+/* ===== HERO ===== */
+
+.hero{
+padding-top:180px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.hero h1{
+font-size:48px;
+max-width:800px;
+}
+
 .hero p{
-
 font-size:18px;
-
 max-width:650px;
-
-line-height:1.7;
-
 opacity:.9;
-
-margin-bottom:30px;
+line-height:1.7;
 }
 
 .btn{
-
+margin-top:25px;
 padding:14px 34px;
-
 border:none;
-
-border-radius:50px;
-
+border-radius:30px;
 background:#facc15;
-
 font-weight:bold;
-
 cursor:pointer;
-
 transition:.3s;
 }
 
@@ -136,64 +102,21 @@ transition:.3s;
 transform:scale(1.08);
 }
 
-/* =====================
-   COMMON SECTION
-===================== */
-
-section{
-padding:120px 20px;
-text-align:center;
-}
-
-h2{
-margin-bottom:20px;
-font-size:38px;
-}
-
-/* =====================
-   FADE ANIMATION
-===================== */
-
-.fade{
-opacity:0;
-transform:translateY(50px);
-transition:.8s ease;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* =====================
-   VALUE GRID
-===================== */
+/* ===== VALUE SECTION ===== */
 
 .value-grid{
-
 display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-gap:25px;
-
-max-width:1100px;
-
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:1000px;
 margin:auto;
 }
 
 .value-box{
-
-background:
-rgba(255,255,255,.12);
-
+background:rgba(255,255,255,.15);
 padding:35px;
-
 border-radius:20px;
-
 backdrop-filter:blur(10px);
-
 transition:.3s;
 }
 
@@ -201,102 +124,60 @@ transition:.3s;
 transform:translateY(-8px);
 }
 
-/* =====================
-   SUBJECT GRID
-===================== */
+/* ===== SUBJECT SECTION ===== */
 
 .subject-grid{
-
 display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
+grid-template-columns:repeat(3,1fr);
 gap:25px;
-
-max-width:1100px;
-
+max-width:1000px;
 margin:auto;
 }
 
 .subject{
-
-background:
-rgba(255,255,255,.12);
-
+background:rgba(255,255,255,.15);
 padding:30px;
-
 border-radius:20px;
-
 cursor:pointer;
-
 transition:.3s;
+backdrop-filter:blur(10px);
 }
 
 .subject:hover{
 transform:translateY(-10px);
 }
-/* =====================
-   MENTOR SECTION
-===================== */
+
+/* ===== MENTOR ===== */
 
 .mentor{
-
-max-width:850px;
-
+max-width:800px;
 margin:auto;
-
-background:
-rgba(255,255,255,.12);
-
-padding:45px;
-
+background:rgba(255,255,255,.12);
+padding:40px;
 border-radius:25px;
-
 backdrop-filter:blur(10px);
 }
 
 .mentor img{
-
 width:120px;
 height:120px;
-
 border-radius:50%;
-
-margin-bottom:20px;
-}
-
-.mentor h3{
-font-size:32px;
 margin-bottom:15px;
 }
 
 .mentor p{
-
 line-height:1.8;
-
-opacity:.9;
 }
 
-/* =====================
-   FAQ
-===================== */
+/* ===== FAQ ===== */
 
 .faq{
-
 max-width:900px;
-
 margin:auto;
-
-background:
-rgba(255,255,255,.12);
-
+background:rgba(255,255,255,.12);
 padding:50px;
-
 border-radius:25px;
-
 text-align:left;
-
 backdrop-filter:blur(10px);
 }
 
@@ -305,58 +186,34 @@ margin-top:25px;
 }
 
 .faq-item h4{
-
 margin-bottom:10px;
-
-font-size:20px;
 }
 
 .faq-item p{
-
 opacity:.9;
-
-line-height:1.8;
+line-height:1.7;
 }
 
-/* =====================
-   APP SECTION
-===================== */
+/* ===== APP SECTION ===== */
 
 .app-section{
-
-max-width:900px;
-
-margin:auto;
-
-padding:60px;
-
-border-radius:30px;
-
-background:
-linear-gradient(
+background:linear-gradient(
 135deg,
 #1e3a8a,
 #2563eb
 );
+padding:60px;
+border-radius:30px;
+max-width:900px;
+margin:auto;
 }
 
-.app-section h2{
-margin-bottom:20px;
-}
-
-/* =====================
-   FOOTER
-===================== */
+/* ===== FOOTER ===== */
 
 footer{
-
 margin-top:100px;
-
-background:
-rgba(0,0,0,.5);
-
 padding:40px;
-
+background:rgba(0,0,0,.6);
 text-align:center;
 }
 
@@ -365,15 +222,71 @@ margin-top:10px;
 }
 
 footer a{
-
 color:#facc15;
-
 text-decoration:none;
 }
+/* ===== SCROLL ANIMATION ===== */
 
-/* =====================
-   MOBILE
-===================== */
+.fade{
+opacity:0;
+transform:translateY(60px);
+transition:
+opacity .8s ease,
+transform .8s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ===== CARD STAGGER EFFECT ===== */
+
+.subject,
+.value-box{
+opacity:0;
+transform:translateY(30px);
+}
+
+.fade.show .subject:nth-child(1),
+.fade.show .value-box:nth-child(1){
+animation:slideUp .6s ease forwards;
+}
+
+.fade.show .subject:nth-child(2),
+.fade.show .value-box:nth-child(2){
+animation:slideUp .8s ease forwards;
+}
+
+.fade.show .subject:nth-child(3),
+.fade.show .value-box:nth-child(3){
+animation:slideUp 1s ease forwards;
+}
+
+.fade.show .subject:nth-child(4){
+animation:slideUp 1.2s ease forwards;
+}
+
+.fade.show .subject:nth-child(5){
+animation:slideUp 1.4s ease forwards;
+}
+
+.fade.show .subject:nth-child(6){
+animation:slideUp 1.6s ease forwards;
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
@@ -395,10 +308,6 @@ gap:15px;
 font-size:14px;
 }
 
-h2{
-font-size:30px;
-}
-
 }
 
 </style>
@@ -407,44 +316,191 @@ font-size:30px;
 <body>
 
 <nav>
-
 <a href="#">Home</a>
-
-<a href="#subjects">
-Subjects
-</a>
-
-<a href="#faq">
-FAQ
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
+<a href="#subjects">Subjects</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
+<section class="hero fade show">
 
-<section class="hero">
-
-<h1>
-Learn Engineering Subjects with Clarity
-</h1>
+<h1>Master Engineering Subjects with Clarity</h1>
 
 <p>
-Structured study materials designed
-for real exam performance.
+Structured study materials designed for real exam performance.
 </p>
 
 <button
 class="btn"
-onclick="
-document.getElementById('subjects')
-.scrollIntoView()">
+onclick="document.getElementById('subjects').scrollIntoView()">
 
 Start Learning
 
 </button>
 
 </section>
+
+<section class="fade">
+
+<h2>Why Choose This Platform?</h2>
+
+<div class="value-grid">
+
+<div class="value-box">
+✔ Exam-Oriented Notes
+</div>
+
+<div class="value-box">
+✔ Simple Explanations
+</div>
+
+<div class="value-box">
+✔ Quick Revision Materials
+</div>
+
+</div>
+
+</section>
+
+<section id="subjects" class="fade">
+
+<h2>Subjects</h2>
+
+<div class="subject-grid">
+
+<div class="subject">Maths 2</div>
+<div class="subject">English</div>
+<div class="subject">Chemistry</div>
+<div class="subject">Electronic Devices</div>
+<div class="subject">Data Structures</div>
+<div class="subject">More Coming Soon</div>
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2>Building Something Valuable</h2>
+
+<p>
+We are currently working on creating
+high-quality study materials to help students
+learn better and score higher in exams.
+</p>
+
+</section>
+
+<section class="fade">
+
+<div class="mentor">
+
+<img src="https://via.placeholder.com/120">
+
+<h2>Madhukar</h2>
+
+<p>
+I built this platform to simplify technical subjects
+and help students learn confidently.
+</p>
+
+</div>
+
+</section>
+
+<section id="faq" class="fade">
+
+<div class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<h4>Are materials free?</h4>
+<p>Yes, completely free for students.</p>
+</div>
+
+<div class="faq-item">
+<h4>How often is content updated?</h4>
+<p>Content is updated regularly based on student needs.</p>
+</div>
+
+<div class="faq-item">
+<h4>Is there an app coming?</h4>
+<p>Yes, a dedicated mobile app is under development.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<div class="app-section">
+
+<h2>Something New Coming Soon</h2>
+
+<button class="btn">
+Notify Me
+</button>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<p>© 2025 Madhukar Speaks</p>
+
+<p>
+Email:
+<a href="mailto:madhukar.kammeta@gmail.com">
+madhukar.kammeta@gmail.com
+</a>
+</p>
+
+<p>
+Privacy Policy | Terms | Disclaimer
+</p>
+
+</footer>
+
+<script>
+
+const faders =
+document.querySelectorAll(".fade");
+
+function reveal(){
+
+faders.forEach(el=>{
+
+const top =
+el.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+
+el.classList.add("show");
+
+}else{
+
+el.classList.remove("show");
+
+}
+
+});
+
+}
+
+window.addEventListener(
+"scroll",
+reveal
+);
+
+window.addEventListener(
+"load",
+reveal
+);
+
+</script>
+
+</body>
+</html>
