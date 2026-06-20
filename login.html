@@ -41,13 +41,18 @@ button{
 <button onclick="googleLogin()">Continue with Google</button>
 
 <script type="module">
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, 
-         GoogleAuthProvider, signInWithPopup } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  setPersistence,
+  browserLocalPersistence
+} from 
+"https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 const firebaseConfig = {
   apiKey: "AIzaSyB6xwUMfwDPrPfHol4I0-gfsYzDuld5rIM",
   authDomain: "madhukar-speaks.firebaseapp.com",
@@ -57,10 +62,10 @@ const firebaseConfig = {
   appId: "1:675959256381:web:a42776eed4683d7d324154",
   measurementId: "G-HJ774ZZ4Q1"
 };
-
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+setPersistence(auth, browserLocalPersistence)
 const provider = new GoogleAuthProvider();
 
 const urlParams = new URLSearchParams(window.location.search);
