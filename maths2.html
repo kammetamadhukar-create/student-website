@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Maths 2 Papers</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body{
-margin:0;
-font-family:Segoe UI, sans-serif;
-background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
-color:white;
-text-align:center;
-}
-
-header{
+<!DOCTYPE html>  <html>    <head>    
+<title>Maths 2 Papers</title>    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <style>    
+body{    
+margin:0;    
+font-family:Segoe UI, sans-serif;    
+background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);    
+color:white;    
+text-align:center;    
+}    header{
 padding:25px;
 font-size:24px;
 font-weight:bold;
@@ -62,66 +56,62 @@ margin-top:10px;
 font-size:14px;
 opacity:0.8;
 }
-</style>
-</head>
+</style>  </head>  <body>  <header>Maths 2 – Mid Examination Papers</header>  <div id="userEmail"></div>  <!-- MID 1 -->  <div class="paper-card">
 
-<body>
-
-<header>Maths 2 – Mid Examination Papers</header>
-
-<div id="userEmail"></div>
-
-<!-- MID 1 -->
-<div class="paper-card">
-<h2>Mid 1 Question Paper</h2>
-<iframe src="mid1.pdf"></iframe>
-<br>
-<button onclick="handleDownload('mid1.pdf')">
-Download Mid 1 PDF
-</button>
-</div>
-
-<!-- MID 2 -->
-<div class="paper-card">
-<h2>Mid 2 Question Paper</h2>
-<iframe src="mid2.pdf"></iframe>
-<br>
-<button onclick="handleDownload('mid2.pdf')">
-Download Mid 2 PDF
-</button>
-</div>
-<div class="paper-card">
-
-    <h2>Etra question with answers </h2>
-
-    <button onclick="window.open('mid3.pdf')">
-        Download PDF 
-    </button>
-
-</div>
-<script type="module">
-
-import { initializeApp } from 
-"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-
-import { 
+<h2>Mid 1 Question Paper</h2>    
+<iframe src="mid1.pdf"></iframe>    
+<br>    
+<button onclick="handleDownload('mid1.pdf')">    
+Download Mid 1 PDF    
+</button>    
+</div>  <!-- MID 2 -->  <div class="paper-card">    
+<h2>Mid 2 Question Paper</h2>    
+<iframe src="mid2.pdf"></iframe>    
+<br>    
+<button onclick="handleDownload('mid2.pdf')">    
+Download Mid 2 PDF    
+</button>    
+</div>    
+<div class="paper-card">  <h2>Get more marks Read this Questions</h2>    <button onclick="handleDownload ('mid3.pdf')">    
+    Download PDF     
+</button>  </div>    
+<script type="module">  import { initializeApp } from  
+"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";  import {
 getAuth,
 onAuthStateChanged,
 setPersistence,
-browserLocalPersistence
-} from 
+browserLocalPersistence,
+signOut
+} from
 "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
-apiKey: "YOUR_API_KEY",
-authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-projectId: "YOUR_PROJECT_ID",
-appId: "YOUR_APP_ID"
+apiKey: "AIzaSyB6xwUMfwDPrPfHol4I0-gfsYzDuld5rIM",
+authDomain: "madhukar-speaks.firebaseapp.com",
+projectId: "madhukar-speaks",
+storageBucket: "madhukar-speaks.firebasestorage.app",
+messagingSenderId: "675959256381",
+appId: "1:675959256381:web:a42776eed4683d7d324154",
+measurementId: "G-HJ774ZZ4Q1"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const loginTime = localStorage.getItem("loginTime");
+const sevenDays = 7 * 24 * 60 * 60 * 1000;
+if (
+!loginTime ||
+Date.now() - Number(loginTime) > sevenDays
+){
 
+signOut(auth);
+
+localStorage.removeItem("loginTime");
+
+window.location.href =
+"login.html?redirect=maths2.html";
+
+}
 // 🔐 Permanent login on this device
 setPersistence(auth, browserLocalPersistence);
 
@@ -142,7 +132,6 @@ window.location.href="login.html?redirect=maths2.html";
 }
 }
 
-</script>
+</script>  </body>
 
-</body>
 </html>
