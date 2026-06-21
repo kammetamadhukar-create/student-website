@@ -76,43 +76,35 @@ opacity:.8;
 <header>Chemistry – Mid Examination Papers</header>
 
 <div id="userEmail"></div>
-
 <div class="paper-card">
-<h2>Mid 1 Imp Question Answers</h2>
 
-<img
-src="chem-thumb.jpg"
-alt="Chemistry Thumbnail"
-class="thumb">
+<h2>Mid 1 Imp Q's & Answers</h2>
 
-<br>
-
-<button onclick="handleDownload('chem-mid1.pdf')">
-Download Mid 1
+<button onclick="handleDownload('https://drive.google.com/file/d/CHEM_MID1_ID/view')">
+Download Mid 1 PDF
 </button>
+
 </div>
 
+
 <div class="paper-card">
-<h2>Mid 2 Question Paper</h2>
 
-<img
-src="chem-thumb.jpg"
-alt="Chemistry Thumbnail"
-class="thumb">
+<h2>Mid 2 Q's & answers</h2>
 
-<br>
 
-<button onclick="handleDownload('chem-mid2.pdf')">
-Download Mid 2 pdf
+<button onclick="handleDownload('https://drive.google.com/file/d/CHEM_MID2_ID/view')">
+Download Mid 2 PDF
 </button>
+
 </div>
-  
-<!-- MID 3 -->
+
+
 <div class="paper-card">
 
-<h2>Get More Marks - Important Questions & Answers</h2>
+<h2>Get More Marks - Read these Questions</h2>
 
-<button onclick="handleDownload('mid3.pdf')">
+
+<button onclick="handleDownload('https://drive.google.com/file/d/CHEM_MID3_ID/view')">
 Download PDF
 </button>
 
@@ -190,19 +182,17 @@ onAuthStateChanged(auth, (user) => {
 
 // Download Protection
 window.handleDownload = function(file){
+if(auth.currentUser){
+window.open(file,"_blank");
+}else{
+window.location.href="login.html?redirect=chemistry.html";
+}
+}
+</script>
 
-  if(auth.currentUser){
+</body>
+</html>
 
-    window.open(file, "_blank");
-
-  } else {
-
-    window.location.href =
-    "login.html?redirect=chemistry.html";
-
-  }
-
-};
 
 </script>
 
