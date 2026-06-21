@@ -85,30 +85,58 @@ Download Mid 1
 Download Mid 2
 </button>
 </div>
+<!-- NEW CARD -->
+<div class="paper-card">
+
+<h2>Get More Marks - Read These Questions</h2>
+
+<button onclick="handleDownload('mid3.pdf')">
+Download PDF
+</button>
+
+</div>
 
 <script type="module">
 
-import { initializeApp } from 
+
+import { initializeApp } from
 "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 
-import { 
-getAuth,
-onAuthStateChanged,
-setPersistence,
-browserLocalPersistence
-} from 
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  setPersistence,
+  browserLocalPersistence,
+  signOut
+} from
 "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
 const firebaseConfig = {
-apiKey: "YOUR_API_KEY",
-authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-projectId: "YOUR_PROJECT_ID",
-appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyB6xwUMfwDPrPfHol4I0-gfsYzDuld5rIM",
+  authDomain: "madhukar-speaks.firebaseapp.com",
+  projectId: "madhukar-speaks",
+  storageBucket: "madhukar-speaks.firebasestorage.app",
+  messagingSenderId: "675959256381",
+  appId: "1:675959256381:web:a42776eed4683d7d324154",
+  measurementId: "G-HJ774ZZ4Q1"
 };
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const loginTime = localStorage.getItem("loginTime");
+const sevenDays = 7 * 24 * 60 * 60 * 1000;
 
+if (
+  loginTime &&
+  Date.now() - Number(loginTime) > sevenDays
+) {
+
+  signOut(auth);
+
+  localStorage.removeItem("loginTime");
+
+  window.location.href =
+  "login.html?redirect=english.html";
+}
 setPersistence(auth, browserLocalPersistence);
 
 onAuthStateChanged(auth,(user)=>{
