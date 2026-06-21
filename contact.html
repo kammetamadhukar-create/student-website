@@ -1,42 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family:Segoe UI; background:#0f172a; color:white; padding:40px; }
-    h1{ color:#facc15; }
-    input, textarea{ width:100%; padding:10px; margin:10px 0; border-radius:5px; border:none; }
-    button{ padding:12px 25px; border-radius:20px; background:#facc15; font-weight:bold; cursor:pointer; border:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Madhukar Speaks</title>
+
+<style>
+body{
+    font-family:Segoe UI,sans-serif;
+    background:#0f172a;
+    color:white;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+}
+
+h1{
+    color:#facc15;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+footer{
+    margin-top:40px;
+    text-align:center;
+}
+</style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="subjects.html">Subjects</a> |
-  <a href="about.html">About</a>
-</nav>
+<div class="container">
 
 <h1>Contact Us</h1>
 
+<div class="card">
+<p>
+Have questions, suggestions, or copyright concerns?
+Feel free to contact us.
+</p>
+
+<p><strong>Email:</strong> chintuyadav5890@gmail.com</p>
+<p><strong>Website:</strong> Madhukar Speaks</p>
+</div>
+
+<div class="card">
+<h2>Send a Message</h2>
+
 <form>
-  <input type="text" placeholder="Your Name" required><br>
-  <input type="email" placeholder="Your Email" required><br>
-  <textarea placeholder="Message" rows="5" required></textarea><br>
-  <button type="submit">Send Message</button>
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
 </form>
+</div>
 
 <footer>
-  <p>© 2026 Madhukar Speaks</p>
-  <p>
-    <a href="about.html">About</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms</a> |
-    <a href="disclaimer.html">Disclaimer</a> |
-    <a href="contact.html">Contact</a>
-  </p>
+<hr>
+
+<p>© 2026 Madhukar Speaks. All Rights Reserved.</p>
+
+<p>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms & Conditions</a> |
+<a href="disclaimer.html">Disclaimer</a>
+</p>
+
 </footer>
+
+</div>
 
 </body>
 </html>
