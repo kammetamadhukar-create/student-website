@@ -2,7 +2,7 @@ importScripts('https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js
 importScripts('https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging-compat.js');
 
 firebase.initializeApp({
-  apiKey: "AIzaSyB6x..."
+  apiKey: "AIzaSyB6xvUMfwDPrPfh0l4I0..."
   authDomain: "madhukar-speaks.firebaseapp.com",
   projectId: "madhukar-speaks",
   storageBucket: "madhukar-speaks.firebasestorage.app",
