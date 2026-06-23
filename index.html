@@ -782,7 +782,7 @@ from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 
  const firebaseConfig = {
-  apiKey: "AIzaSyB6x...",
+  apiKey: "AIzaSyB6x",
   authDomain: "madhukar-speaks.firebaseapp.com",
   projectId: "madhukar-speaks",
   storageBucket: "madhukar-speaks.firebasestorage.app",
@@ -829,8 +829,11 @@ document.getElementById("visitorCount")
 }
 
 updateVisitors();
+function submitReview(){
+alert("Thank you for your feedback!");
+}
 
-// Notification Button
+/* Notification Button */
 
 const notifyBtn =
 document.getElementById("notifyBtn");
@@ -841,80 +844,15 @@ const permission =
 await Notification.requestPermission();
 
 if(permission === "granted"){
-
 alert("Notifications Enabled ✅");
-
 }else{
-
 alert("Notifications Blocked ❌");
-
-}
-
-});
-   
-   
-   const snap = await getDoc(visitorRef);
-
-if(!snap.exists()){
-
-await setDoc(visitorRef,{
-count:1
-});
-
-document.getElementById("visitorCount")
-.innerText = "Total Visitors: 1";
-
-}
-else{
-
-await updateDoc(visitorRef,{
-count: increment(1)
-});
-
-const newCount =
-snap.data().count + 1;
-
-document.getElementById("visitorCount")
-.innerText =
-"Total Visitors: " + newCount;
-
-}
-
-}
-
-updateVisitors();
-const faders =
-document.querySelectorAll(".fade");
-
-function reveal(){
-
-faders.forEach(el=>{
-
-const top =
-el.getBoundingClientRect().top;
-
-if(
-top <
-window.innerHeight - 100
-){
-
-el.classList.add("show");
-
 }
 
 });
 
-}
+/* FAQ Code */
 
-window.addEventListener(
-"load",
-reveal
-);
-
-window.addEventListener(
-"scroll",
-reveal
-);
 const faqItems =
 document.querySelectorAll(".faq-item");
 
@@ -936,7 +874,11 @@ item.classList.toggle("active");
 });
 
 });
+   
+
+
 </script>
 
 </body>
 </html>
+
