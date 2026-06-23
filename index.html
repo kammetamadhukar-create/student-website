@@ -280,43 +280,46 @@ opacity:.9;
 /* =========================
    FAQ SECTION
 ========================= */
-
-.faq{
-
-max-width:900px;
-
-margin:auto;
-
-background:
-rgba(255,255,255,.12);
-
-padding:50px;
-
-border-radius:25px;
-
-text-align:left;
-
+.faq-item{
+margin-bottom:15px;
+border-radius:15px;
+overflow:hidden;
+background:rgba(255,255,255,.12);
 backdrop-filter:blur(10px);
 }
 
-.faq-item{
-margin-top:25px;
+.faq-question{
+padding:20px;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:18px;
+font-weight:600;
 }
 
-.faq-item h4{
-
-font-size:20px;
-
-margin-bottom:10px;
+.faq-question span{
+font-size:24px;
+transition:.3s;
 }
 
-.faq-item p{
-
+.faq-answer{
+max-height:0;
+overflow:hidden;
+padding:0 20px;
 line-height:1.8;
-
-opacity:.9;
+transition:max-height .4s ease;
 }
 
+.faq-item.active .faq-answer{
+max-height:200px;
+padding:0 20px 20px;
+}
+
+.faq-item.active .faq-question span{
+transform:rotate(45deg);
+}
+   
 /* =========================
    APP SECTION
 ========================= */
@@ -642,51 +645,56 @@ Helping students to share notes
 <section
 id="faq"
 class="fade">
-
 <div class="faq">
 
-<h2>
-Frequently Asked Questions
-</h2>
+<h2>Frequently Asked Questions</h2>
 
 <div class="faq-item">
+<div class="faq-question">
+📚 Are all study materials free?
+<span>+</span>
+</div>
 
-<h4>
-Are materials free?
-</h4>
-
-<p>
-Yes, completely free for students.
-</p>
-
+<div class="faq-answer">
+Most notes, PDFs and question papers are available free for students.
+</div>
 </div>
 
 <div class="faq-item">
+<div class="faq-question">
+📝 Are previous year papers available?
+<span>+</span>
+</div>
 
-<h4>
-How often is content updated?
-</h4>
-
-<p>
-Content is updated regularly.
-</p>
-
+<div class="faq-answer">
+Yes. Previous year papers and important questions are uploaded regularly.
+</div>
 </div>
 
 <div class="faq-item">
+<div class="faq-question">
+📱 Is a mobile app coming soon?
+<span>+</span>
+</div>
 
-<h4>
-Is there an app coming?
-</h4>
+<div class="faq-answer">
+Yes. A dedicated StudyHub mobile app is under development.
+</div>
+</div>
 
-<p>
-Yes, a dedicated mobile app is
-under development.
-</p>
+<div class="faq-item">
+<div class="faq-question">
+🔄 How often is content updated?
+<span>+</span>
+</div>
 
+<div class="faq-answer">
+New materials are added whenever quality content becomes available.
+</div>
 </div>
 
 </div>
+
 
 </section>
 
@@ -764,27 +772,14 @@ import {
 getFirestore,
 doc,
 getDoc,
+setDoc,
 updateDoc,
 increment
 }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // firebaseConfig
-const firebaseConfig = {
- ...
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// Visitor Counter
-const visitorRef = doc(db,"stats","visitors");
-
-async function updateVisitors(){
-...
-}
-
-updateVisitors();
 
  const firebaseConfig = {
   apiKey: "AIzaSyB6x...",
@@ -920,7 +915,27 @@ window.addEventListener(
 "scroll",
 reveal
 );
+const faqItems =
+document.querySelectorAll(".faq-item");
 
+faqItems.forEach(item=>{
+
+item.querySelector(".faq-question")
+.addEventListener("click",()=>{
+
+faqItems.forEach(faq=>{
+
+if(faq !== item){
+faq.classList.remove("active");
+}
+
+});
+
+item.classList.toggle("active");
+
+});
+
+});
 </script>
 
 </body>
