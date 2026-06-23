@@ -755,7 +755,89 @@ chintuyadav5890@gmail.com
 <!-- ANIMATION SCRIPT -->
 
 <script type="module">
-   const notifyBtn =
+  
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import {
+getFirestore,
+doc,
+getDoc,
+updateDoc,
+increment
+}
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// firebaseConfig
+const firebaseConfig = {
+ ...
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Visitor Counter
+const visitorRef = doc(db,"stats","visitors");
+
+async function updateVisitors(){
+...
+}
+
+updateVisitors();
+
+ const firebaseConfig = {
+  apiKey: "NI_API_KEY",
+  authDomain: "madhukar-speaks.firebaseapp.com",
+  projectId: "madhukar-speaks",
+  storageBucket: "madhukar-speaks.firebasestorage.app",
+  messagingSenderId: "675959256381",
+  appId: "NI_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Visitor Counter
+
+const visitorRef = doc(db,"stats","visitors");
+
+async function updateVisitors(){
+
+const snap = await getDoc(visitorRef);
+
+if(!snap.exists()){
+
+await setDoc(visitorRef,{
+count:1
+});
+
+document.getElementById("visitorCount")
+.innerText = "Total Visitors: 1";
+
+}
+else{
+
+await updateDoc(visitorRef,{
+count: increment(1)
+});
+
+const newCount =
+snap.data().count + 1;
+
+document.getElementById("visitorCount")
+.innerText =
+"Total Visitors: " + newCount;
+
+}
+
+}
+
+updateVisitors();
+
+// Notification Button
+
+const notifyBtn =
 document.getElementById("notifyBtn");
 
 notifyBtn.addEventListener("click", async ()=>{
@@ -774,9 +856,9 @@ alert("Notifications Blocked ❌");
 }
 
 });
-
-
-const snap = await getDoc(visitorRef);
+   
+   
+   const snap = await getDoc(visitorRef);
 
 if(!snap.exists()){
 
