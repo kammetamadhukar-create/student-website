@@ -703,6 +703,21 @@ Notify Me
 </div>
 
 </section>
+<div id="visitorCount"
+style="font-size:18px;margin-top:20px;">
+Total Visitors: Loading...
+</div>
+<section class="fade">
+
+<h2>Notifications</h2>
+
+<button id="notifyBtn">
+🔔 Enable Notifications
+</button>
+
+<div id="materialNotification"></div>
+
+</section>
 
 <!-- FOOTER -->
 
@@ -732,7 +747,69 @@ chintuyadav5890@gmail.com
 <!-- ANIMATION SCRIPT -->
 
 <script>
+   const notifyBtn =
+document.getElementById("notifyBtn");
 
+notifyBtn.addEventListener("click", async ()=>{
+
+const permission =
+await Notification.requestPermission();
+
+if(permission === "granted"){
+
+alert("Notifications Enabled ✅");
+
+}else{
+
+alert("Notifications Blocked ❌");
+
+}
+
+});
+   import {
+getFirestore,
+doc,
+getDoc,
+setDoc,
+updateDoc,
+increment
+}
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+   const db = getFirestore(app);
+const visitorRef = doc(db,"stats","visitors");
+
+async function updateVisitors(){
+
+const snap = await getDoc(visitorRef);
+
+if(!snap.exists()){
+
+await setDoc(visitorRef,{
+count:1
+});
+
+document.getElementById("visitorCount")
+.innerText = "Total Visitors: 1";
+
+}
+else{
+
+await updateDoc(visitorRef,{
+count: increment(1)
+});
+
+const newCount =
+snap.data().count + 1;
+
+document.getElementById("visitorCount")
+.innerText =
+"Total Visitors: " + newCount;
+
+}
+
+}
+
+updateVisitors();
 const faders =
 document.querySelectorAll(".fade");
 
