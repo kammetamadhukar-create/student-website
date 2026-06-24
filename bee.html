@@ -153,7 +153,7 @@ if (
   localStorage.removeItem("loginTime");
 
   window.location.href =
-  "login.html?redirect=chemistry.html";
+  "login.html?redirect=bee.html";
 }
 
 // Keep Login On Device
@@ -174,7 +174,7 @@ onAuthStateChanged(auth, (user) => {
   } else {
 
     window.location.href =
-    "login.html?redirect=chemistry.html";
+    "login.html?redirect=bee.html";
 
   }
 
@@ -185,7 +185,7 @@ window.handleDownload = function(file){
 if(auth.currentUser){
 window.open(file,"_blank");
 }else{
-window.location.href="login.html?redirect=chemistry.html";
+window.location.href="login.html?redirect=bee.html";
 }
 }
 </script>
