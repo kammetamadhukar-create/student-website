@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Madhukar Speaks</title>
-
-<style>
+<!DOCTYPE html>  <html lang="en">  <head>  <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Madhukar Speaker</title>  <style>
 
 /* =========================
-   GLOBAL
+GLOBAL
 ========================= */
 
 *{
@@ -38,7 +28,7 @@ overflow-x:hidden;
 }
 
 /* =========================
-   NAVBAR
+NAVBAR
 ========================= */
 
 nav{
@@ -73,13 +63,13 @@ color:#facc15;
 }
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
 
-padding-top:130px;
-padding-bottom:80px;
+padding-top:100px;
+padding-bottom:70px;
 
 text-align:center;
 }
@@ -134,7 +124,7 @@ transform:scale(1.08);
 }
 
 /* =========================
-   SECTION
+SECTION
 ========================= */
 
 section{
@@ -148,9 +138,8 @@ margin-bottom:20px;
 }
 
 /* =========================
-   SCROLL ANIMATION
+SCROLL ANIMATION
 ========================= */
-
 .fade{
 opacity:0;
 transform:translateY(50px);
@@ -162,8 +151,10 @@ opacity:1;
 transform:translateY(0);
 }
 
+
+
 /* =========================
-   VALUE SECTION
+VALUE SECTION
 ========================= */
 
 .value-grid{
@@ -199,7 +190,7 @@ transform:translateY(-8px);
 }
 
 /* =========================
-   SUBJECT SECTION
+SUBJECT SECTION
 ========================= */
 
 .subject-grid{
@@ -236,7 +227,7 @@ transform:
 translateY(-10px);
 }
 /* =========================
-   MENTOR SECTION
+MENTOR SECTION
 ========================= */
 
 .mentor{
@@ -278,51 +269,10 @@ opacity:.9;
 }
 
 /* =========================
-   FAQ SECTION
+FAQ SECTION
 ========================= */
-.faq-item{
-margin-bottom:15px;
-border-radius:15px;
-overflow:hidden;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(10px);
-}
 
-.faq-question{
-padding:20px;
-cursor:pointer;
-display:flex;
-justify-content:space-between;
-align-items:center;
-font-size:18px;
-font-weight:600;
-}
-
-.faq-question span{
-font-size:24px;
-transition:.3s;
-}
-
-.faq-answer{
-max-height:0;
-overflow:hidden;
-padding:0 20px;
-line-height:1.8;
-transition:max-height .4s ease;
-}
-
-.faq-item.active .faq-answer{
-max-height:200px;
-padding:0 20px 20px;
-}
-
-.faq-item.active .faq-question span{
-transform:rotate(45deg);
-}
-   
-/* =========================
-   APP SECTION
-========================= */
+/*≠================ App SECTION========================= */
 
 .app-section{
 
@@ -347,7 +297,7 @@ margin-bottom:20px;
 }
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
@@ -372,9 +322,15 @@ color:#facc15;
 
 text-decoration:none;
 }
+.feedback-text{
+font-size:16px;
+opacity:.9;
+margin-bottom:20px;
+line-height:1.7;
+}
 
 /* =========================
-   MOBILE RESPONSIVE
+MOBILE RESPONSIVE
 ========================= */
 
 @media(max-width:768px){
@@ -415,359 +371,228 @@ background:rgba(255,255,255,.12);
 backdrop-filter:blur(10px);
 box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
-</style>
-</head>
+.notification-section{
+max-width:900px;
+margin:40px auto;
+padding:50px 30px;
+border-radius:30px;
+background:linear-gradient(
+135deg,
+rgba(59,130,246,.4),
+rgba(37,99,235,.25)
+);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.15);
+}
 
-<body>
+.notification-section h2{
+font-size:42px;
+margin-bottom:20px;
+}
 
-<nav>
+.notification-section p{
+font-size:20px;
+line-height:1.8;
+max-width:700px;
+margin:auto;
+margin-bottom:30px;
+}
 
-<a href="#">Home</a>
+.notify-btn{
+padding:18px 45px;
+border:none;
+border-radius:50px;
+background:#facc15;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
 
-<a href="#subjects">
-Subjects
-</a>
+.notify-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #facc15;
+}
 
-<a href="#faq">
-FAQ
-</a>
+.notification-section{
+max-width:800px;
+margin:auto;
+padding:60px 30px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+border-radius:25px;
+}
+/*
+.notification-section p{
+margin-bottom:25px;
+opacity:.9;
+line-height:1.8;
+}
 
-<a href="#contact">
-Contact
-</a>
+.notify-btn{
+padding:16px 40px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:50px;
+cursor:pointer;
+background:linear-gradient(
+135deg,
+#facc15,
+#f59e0b
+);
+transition:.3s;
+}
 
-</nav>
+.notify-btn:hover{
+transform:scale(1.05);
+}
 
-<!-- HERO -->
+#notificationStatus{
+margin-top:20px;
+font-size:18px;
+font-weight:600;
+}*/
+</style>  </head>  <body>  <nav>  <a href="#">Home</a>
 
-<section class="hero">
+<a href="#subjects">    
+Subjects    
+</a>  <a href="#faq">    
+FAQ    
+</a>  <a href="#contact">    
+Contact    
+</a>  </nav>  <!-- HERO -->  <section class="hero">  <h1>    
+Master Engineering Subjects with Clarity    
+</h1>  <p>    
+Structured study materials designed    
+for real exam performance.    
+</p>  <button    
+class="btn"    
+onclick="    
+document.getElementById('subjects')    
+.scrollIntoView({    
+behavior:'smooth'    
+})">  Start Learning
 
-<h1>
-Master Engineering Subjects with Clarity
-</h1>
+</button>  </section>
 
-<p>
-Structured study materials designed
-for real exam performance.
+<!-- WHY CHOOSE -->  <section class="fade">  <h2>Why Choose This Platform?</h2>  <div class="value-grid">  <div class="value-box">    ✔ Exam-Oriented Notes
+
+</div>  <div class="value-box">    
+✔ Simple Explanations    
+</div>  <div class="value-box">    
+✔ Quick Revision Materials    
+</div>  </div>  </section>  <!-- SUBJECTS -->  <section    
+id="subjects"    
+class="fade">  <h2>Subjects</h2>  <div class="subject-grid">  <div    
+class="subject"    
+onclick="window.location.href='maths2.html'">  Maths 2  </div>  <div    
+class="subject"    
+onclick="window.location.href='english.html'">  English  </div>  <div    
+class="subject"    
+onclick="window.location.href='chemistry.html'">  Chemistry  </div>  <div    
+class="subject"    
+onclick="window.location.href='edc.html'">  Electronic Devices  </div>  <div    
+class="subject"    
+onclick="window.location.href='datastructures.html'">  Data Structures  </div>    
+<div    
+class="subject"    
+onclick="window.location.href='bee.html'">  BEE  </div>  <div    
+class="subject"    
+onclick="window.location.href='physics.html'">  Physics  </div>   <div class="paper-card">
+
+<h3>💬 Share Your Experience</h2>
+
+<p class="feedback-text">
+
+Your feedback helps us improve and provide
+better content for students.
 </p>
-
-<button
-class="btn"
-onclick="
-document.getElementById('subjects')
-.scrollIntoView({
-behavior:'smooth'
-})">
-
-Start Learning
-
-</button>
-
-</section>
-<!-- WHY CHOOSE -->
-
-<section class="fade">
-
-<h2>Why Choose This Platform?</h2>
-
-<div class="value-grid">
-
-<div class="value-box">
-✔ Exam-Oriented Notes
-</div>
-
-<div class="value-box">
-✔ Simple Explanations
-</div>
-
-<div class="value-box">
-✔ Quick Revision Materials
-</div>
-
-</div>
-
-</section>
-
-<!-- SUBJECTS -->
-
-<section
-id="subjects"
-class="fade">
-
-<h2>Subjects</h2>
-
-<div class="subject-grid">
-
-<div
-class="subject"
-onclick="window.location.href='maths2.html'">
-
-Maths 2
-
-</div>
-
-<div
-class="subject"
-onclick="window.location.href='english.html'">
-
-English
-
-</div>
-
-<div
-class="subject"
-onclick="window.location.href='chemistry.html'">
-
-Chemistry
-
-</div>
-
-<div
-class="subject"
-onclick="window.location.href='edc.html'">
-
-Electronic Devices
-
-</div>
-
-<div
-class="subject"
-onclick="window.location.href='datastructures.html'">
-
-Data Structures
-
-</div>
-<div
-class="subject"
-onclick="window.location.href='bee.html'">
-
-BEE
-
-</div>
-
-<div
-class="subject"
-onclick="window.location.href='physics.html'">
-
-Physics
-
-</div>
-   
-   <div class="paper-card">
-
-<h2>⭐ Rate This Material</h2>
-
-<select id="rating">
-<option value="5">⭐⭐⭐⭐⭐ (5)</option>
-<option value="4">⭐⭐⭐⭐ (4)</option>
-<option value="3">⭐⭐⭐ (3)</option>
-<option value="2">⭐⭐ (2)</option>
-<option value="1">⭐ (1)</option>
-</select>
-
-<br><br>
-
-<textarea
-id="feedback"
-placeholder="Write your feedback..."
-style="
-width:90%;
-height:120px;
-padding:10px;
-border-radius:10px;
-">
-</textarea>
-
-<br>
 
 <button onclick="submitReview()">
-Submit Review
+⭐ Give Feedback
 </button>
 
-   </div>
-
-<div
-class="subject">
-
-More Coming Soon
-
 </div>
 
+<div class="subject">
+🚀 More Subjects Coming Soon
 </div>
 
-</section>
+ </div>  </section>  <!-- ABOUT -->  <section class="fade">  <h2>    
+Building Something Valuable    
+</h2>  <p>  We are currently working on  
+creating high-quality study  
+materials to help students  
+learn better and score higher  
+in exams.  </p>  </section> 
 
-<!-- ABOUT -->
 
-<section class="fade">
+<div id="visitorCount"    
+style="font-size:18px;margin-top:20px;">    
+Total Visitors: Loading...    
+</div> 
+<!-- NOTIFICATION SECTION -->
+<section class="fade notification-section">
 
-<h2>
-Building Something Valuable
-</h2>
+<h2>🔔 Never Miss New Materials</h2>
 
 <p>
-
-We are currently working on
-creating high-quality study
-materials to help students
-learn better and score higher
-in exams.
-
+Get instant alerts whenever new notes,
+PDFs, question papers and updates are uploaded.
 </p>
+
+<button id="notifyBtn" class="notify-btn">
+Turn on Notifications
+</button>
+
+<div id="notificationStatus"></div>
 
 </section>
 
-<!-- MENTOR -->
 
+<!-- MENTOR SECTION -->
 <section class="fade">
 
 <div class="mentor">
 
-<img
-src="https://via.placeholder.com/120">
+<img src="https://via.placeholder.com/120">
 
-<h2>
-Meet your mentor coming soon 
-</h2>
+<h2>Meet your mentor coming soon</h2>
 
 <p>
-
-Helping students to share notes 
-
+Helping students to share notes
 </p>
 
 </div>
 
 </section>
 
-<!-- FAQ -->
 
-<section
-id="faq"
-class="fade">
-<div class="faq">
-
-<h2>Frequently Asked Questions</h2>
-
-<div class="faq-item">
-<div class="faq-question">
-📚 Are all study materials free?
-<span>+</span>
-</div>
-
-<div class="faq-answer">
-Most notes, PDFs and question papers are available free for students.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">
-📝 Are previous year papers available?
-<span>+</span>
-</div>
-
-<div class="faq-answer">
-Yes. Previous year papers and important questions are uploaded regularly.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">
-📱 Is a mobile app coming soon?
-<span>+</span>
-</div>
-
-<div class="faq-answer">
-Yes. A dedicated StudyHub mobile app is under development.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">
-🔄 How often is content updated?
-<span>+</span>
-</div>
-
-<div class="faq-answer">
-New materials are added whenever quality content becomes available.
-</div>
-</div>
-
-</div>
+<!-- FAQ SECTION -->
 
 
-</section>
+<!-- FAQ Items Here -->
 
-<!-- APP -->
-
-<section class="fade">
-
-<div class="app-section">
-
-<h2>
-Something New Coming Soon
-</h2>
-
-<button
-class="btn"
-onclick="alert('Coming Soon!')">
-
-Notify Me
-
-</button>
-
-</div>
-
-</section>
-<div id="visitorCount"
-style="font-size:18px;margin-top:20px;">
-Total Visitors: Loading...
-</div>
-<section class="fade">
-
-<h2>Notifications</h2>
-
-<button id="notifyBtn">
-🔔 Enable Notifications
-</button>
-
-<div id="materialNotification"></div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer id="contact">
-
-<p>
-© 2026 Chintu Madhu
-</p>
-
-<p>
-
-Email:
-
-<a href="mailto: chintuyadav5890@gmail.com">
-
-chintuyadav5890@gmail.com
+<!-- FOOTER -->  <footer id="contact">  <p>    
+© 2026 Chintu Madhu    
+</p>  <p>  Email:  <a href="mailto: chintuyadav5890@gmail.com">  chintuyadav5890@gmail.com
 </a>
-<p>
-<a href="privacy.html">Privacy Policy</a> |
-<a href="terms.html">Terms</a> |
-<a href="disclaimer.html">Disclaimer</a> |
-<a href="about.html">About</a> |
-<a href="contact.html">Contact</a>
-</p>
-</footer>
 
-<!-- ANIMATION SCRIPT -->
-
-<script type="module">
-  
-
-import { initializeApp }
+<p>    
+<a href="privacy.html">Privacy Policy</a> |    
+<a href="terms.html">Terms</a> |    
+<a href="disclaimer.html">Disclaimer</a> |    
+<a href="about.html">About</a> |    
+<a href="contact.html">Contact</a>    
+</p>    
+</footer>  <!-- ANIMATION SCRIPT -->  <script type="module">    import { initializeApp }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-
+import {
+getMessaging,
+getToken
+}
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
 import {
 getFirestore,
 doc,
@@ -780,18 +605,18 @@ from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // firebaseConfig
 
-
- const firebaseConfig = {
-  apiKey: "AIzaSyB6x",
-  authDomain: "madhukar-speaks.firebaseapp.com",
-  projectId: "madhukar-speaks",
-  storageBucket: "madhukar-speaks.firebasestorage.app",
-  messagingSenderId: "675959256381",
-  appId: "1:675959256381:web:a42776eed4683d7d324154"
+const firebaseConfig = {
+apiKey: "AIzaSyB6x",
+authDomain: "madhukar-speaks.firebaseapp.com",
+projectId: "madhukar-speaks",
+storageBucket: "madhukar-speaks.firebasestorage.app",
+messagingSenderId: "675959256381",
+appId: "1:675959256381:web:a42776eed4683d7d324154"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const messaging = getMessaging(app);
 
 // Visitor Counter
 
@@ -835,50 +660,67 @@ alert("Thank you for your feedback!");
 
 /* Notification Button */
 
+if ("serviceWorker" in navigator) {
+
+navigator.serviceWorker
+.register("/firebase-messaging-sw.js")
+.then(() => {
+console.log("Service Worker Registered");
+})
+.catch(err => {
+console.log(err);
+});
+
+}
 const notifyBtn =
 document.getElementById("notifyBtn");
 
 notifyBtn.addEventListener("click", async ()=>{
-
 const permission =
 await Notification.requestPermission();
-
 if(permission === "granted"){
+
+const token = await getToken(
+messaging,
+{
+vapidKey:"BDgizr3O1iUqRuKm7KEiNEu94UymTB6y1L2hbPovJP2GnXStA2SkHyfKgbKlx9j4ATsR4qff8ly40bZQBassh5c"
+}
+);
+
+console.log(token);
+
 alert("Notifications Enabled ✅");
+
 }else{
+
 alert("Notifications Blocked ❌");
+
 }
 
 });
+const faders = document.querySelectorAll(".fade");
+
+function reveal(){
+
+faders.forEach(el=>{
+
+const top = el.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+el.classList.add("show");
+}
+
+});
+
+}
+
 
 /* FAQ Code */
 
-const faqItems =
-document.querySelectorAll(".faq-item");
 
-faqItems.forEach(item=>{
+window.addEventListener("load", reveal);
+window.addEventListener("scroll", reveal);
 
-item.querySelector(".faq-question")
-.addEventListener("click",()=>{
+</script>  </body>
 
-faqItems.forEach(faq=>{
-
-if(faq !== item){
-faq.classList.remove("active");
-}
-
-});
-
-item.classList.toggle("active");
-
-});
-
-});
-   
-
-
-</script>
-
-</body>
 </html>
-
