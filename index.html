@@ -302,7 +302,7 @@ FOOTER
 
 footer{
 
-margin-top:100px;
+margin-top:40px,;
 
 padding:40px;
 
@@ -321,12 +321,6 @@ footer a{
 color:#facc15;
 
 text-decoration:none;
-}
-.feedback-text{
-font-size:16px;
-opacity:.9;
-margin-bottom:20px;
-line-height:1.7;
 }
 
 /* =========================
@@ -422,37 +416,7 @@ background:rgba(255,255,255,.12);
 backdrop-filter:blur(10px);
 border-radius:25px;
 }
-/*
-.notification-section p{
-margin-bottom:25px;
-opacity:.9;
-line-height:1.8;
-}
 
-.notify-btn{
-padding:16px 40px;
-font-size:18px;
-font-weight:bold;
-border:none;
-border-radius:50px;
-cursor:pointer;
-background:linear-gradient(
-135deg,
-#facc15,
-#f59e0b
-);
-transition:.3s;
-}
-
-.notify-btn:hover{
-transform:scale(1.05);
-}
-
-#notificationStatus{
-margin-top:20px;
-font-size:18px;
-font-weight:600;
-}*/
 </style>  </head>  <body>  <nav>  <a href="#">Home</a>
 
 <a href="#subjects">    
@@ -486,11 +450,14 @@ behavior:'smooth'
 id="subjects"    
 class="fade">  <h2>Subjects</h2>  <div class="subject-grid">  <div    
 class="subject"    
-onclick="window.location.href='maths2.html'">  Maths 2  </div>  <div    
+onclick="window.location.href='maths2.html'">  Maths 2  </div>
+<!--- <div    
 class="subject"    
-onclick="window.location.href='english.html'">  English  </div>  <div    
+onclick="window.location.href='english.html'">  English  </div> --->
+<div    
 class="subject"    
-onclick="window.location.href='chemistry.html'">  Chemistry  </div>  <div    
+onclick="window.location.href='chemistry.html'">  Chemistry  </div> 
+<div    
 class="subject"    
 onclick="window.location.href='edc.html'">  Electronic Devices  </div>  <div    
 class="subject"    
@@ -499,27 +466,10 @@ onclick="window.location.href='datastructures.html'">  Data Structures  </div>
 class="subject"    
 onclick="window.location.href='bee.html'">  BEE  </div>  <div    
 class="subject"    
-onclick="window.location.href='physics.html'">  Physics  </div>   <div class="paper-card">
+onclick="window.location.href='physics.html'">  Physics  </div>     <div class="paper-card">  <div    
+class="subject">  More Coming Soon
 
-<h3>💬 Share Your Experience</h2>
-
-<p class="feedback-text">
-
-Your feedback helps us improve and provide
-better content for students.
-</p>
-
-<button onclick="submitReview()">
-⭐ Give Feedback
-</button>
-
-</div>
-
-<div class="subject">
-🚀 More Subjects Coming Soon
-</div>
-
- </div>  </section>  <!-- ABOUT -->  <section class="fade">  <h2>    
+</div>  </div>  </section>  <!-- ABOUT -->  <section class="fade">  <h2>    
 Building Something Valuable    
 </h2>  <p>  We are currently working on  
 creating high-quality study  
@@ -550,7 +500,6 @@ Turn on Notifications
 
 </section>
 
-
 <!-- MENTOR SECTION -->
 <section class="fade">
 
@@ -570,12 +519,50 @@ Helping students to share notes
 
 
 <!-- FAQ SECTION -->
+<!---<section id="faq" class="fade">
 
+<!---<h2>Frequently Asked Questions</h2>--->
 
 <!-- FAQ Items Here -->
 
+<!-- BEST OF LUCK SECTION -->
+
+<section class="fade">
+
+<div style="
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+border-radius:25px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+">
+
+<h2 style="color:#facc15;">
+🎓 Best of Luck for Your Semester Exams!
+</h2>
+
+<p style="
+font-size:20px;
+line-height:1.8;
+margin-top:20px;
+">
+
+Believe in yourself, stay consistent, and give your best in every exam.
+
+Remember, success comes from preparation, dedication, and confidence.
+
+<b>Wishing you excellent marks and a bright future!</b> 🌟📚
+
+</p>
+
+</div>
+
+</section>
+
+
 <!-- FOOTER -->  <footer id="contact">  <p>    
-© 2026 Chintu Madhu    
+© 2026 Chintu Bhai    
 </p>  <p>  Email:  <a href="mailto: chintuyadav5890@gmail.com">  chintuyadav5890@gmail.com
 </a>
 
@@ -700,27 +687,19 @@ alert("Notifications Blocked ❌");
 });
 const faders = document.querySelectorAll(".fade");
 
-function reveal(){
+function reveal() {
+    faders.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
 
-faders.forEach(el=>{
-
-const top = el.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-el.classList.add("show");
+        if (top < window.innerHeight - 100) {
+            el.classList.add("show");
+        }
+    });
 }
-
-});
-
-}
-
 
 /* FAQ Code */
-
-
 window.addEventListener("load", reveal);
 window.addEventListener("scroll", reveal);
-
 </script>  </body>
 
 </html>
