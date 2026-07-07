@@ -152,17 +152,16 @@ onAuthStateChanged(auth,(user)=>{
 // ⬇ Download Logic
 window.handleDownload = function(file){
 
-    if(auth.currentUser){
+    onAuthStateChanged(auth, (user) => {
 
-        window.open(file,"_blank");
+        if(user){
+            window.open(file, "_blank");
+        }else{
+            localStorage.setItem("pendingPdf", file);
+            window.location.href = "login.html?redirect=maths2.html";
+        }
 
-    }else{
-
-        localStorage.setItem("pendingPdf", file);
-
-        window.location.href="login.html?redirect=maths2.html";
-
-    }
+    });
 
 }
 
